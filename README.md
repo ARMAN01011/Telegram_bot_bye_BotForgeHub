@@ -43,8 +43,8 @@
 ## Iɴsᴛᴀʟʟᴀᴛɪᴏɴ
 
 ```shell
-git clone 
-cd BotForgeHub_Bot
+git clone https://github.com/ARMAN01011/Telegram_bot_bye_BotForgeHub.git
+cd Telegram_bot_bye_BotForgeHub
 ```
 
 1. **Sᴇᴛ Bᴏᴛ Tᴏᴋᴇɴ**:
