@@ -104,14 +104,12 @@ def list_filters(message):
         bot.reply_to(message, "No Filters Set.", parse_mode="Markdown")
 
 @bot.message_handler(func=lambda message: message.text.startswith('/') and message.text[1:] in bot_data["commands"])
-@is_banned
 def handle_custom_command(message):
     command = message.text[1:].split()[0]
     response = bot_data["commands"][command]
     bot.reply_to(message, response, parse_mode="Markdown")
 
 @bot.message_handler(content_types=['text'])
-@is_banned
 def handle_filters(message):
     for trigger, response in bot_data["filters"].items():
         if trigger.lower() in message.text.lower():
@@ -119,7 +117,6 @@ def handle_filters(message):
             break
 
 @bot.message_handler(content_types=['photo', 'video', 'document'])
-@is_banned
 def handle_media(message):
     caption = message.caption or ""
     bot.forward_message(message.chat.id, message.chat.id, message.message_id)
